@@ -14,21 +14,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
         
         } else {
         content.style.display = "flex";
-        mainElement.style.marginTop = "186px";
         }
     });
 
     window.addEventListener("resize", function() {
-        mainElement.style.removeProperty("margin-top"); 
-            
+        mainElement.style.removeProperty("margin-top");
+
         const innerWidth = window.innerWidth;
-        if (innerWidth > 375) {
+        if (innerWidth > 576) {
           content.style.display = "flex";
         } else {
           content.style.display = "none";      
         }
       });
 });
-
-
-

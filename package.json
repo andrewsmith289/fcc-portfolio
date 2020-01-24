@@ -9,10 +9,12 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   },
   "scripts": {
-    "scss": "node-sass scss/ -o css/",
-    "scss:watch": "npm run scss && node-sass --watch scss/ -o css/"
+    "compile": "gulp compile",
+    "watch": "gulp watch"
   }
 }
