@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  margin: 0; }
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important; }
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  color: #ddd;
+  z-index: 10; }
+  header .name {
+    margin: 0;
+    padding: 0.25em 0 0.25rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    background: #222; }
+  header .collapse {
+    position: absolute;
+    right: 1rem;
+    top: 3px;
+    margin-left: 0;
+    font-size: 1.75rem; }
+  header ul {
+    height: 96vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-left: auto;
+    padding: 0;
+    list-style: none;
+    background: #222;
+    color: #ddd;
+    font-weight: 400;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black; }
+    header ul li {
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 300; }
+      header ul li a {
+        color: inherit;
+        text-decoration: none; }
+        header ul li a:hover {
+          border-bottom: 1px solid white;
+          text-shadow: 8px 8px 14px #ccc; }
+
+blockquote {
+  width: 100%; }
+
+main {
+  margin-top: 38px;
+  margin-bottom: 1rem; }
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  section h1, section h2, section h3 {
+    font-weight: 500; }
+  section h1 {
+    background: #333;
+    color: white;
+    padding: .25rem .5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0; }
+  section h2 {
+    padding: .25rem;
+    margin: 0;
+    background: #777;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 5px 5px 0 0; }
+  section .container {
+    max-width: 1200px;
+    padding: 1rem; }
+  section#splash {
+    min-height: calc(100vh - 39px);
+    position: relative;
+    z-index: -5;
+    padding: 0 2rem;
+    padding-top: 7rem;
+    background: bottom/cover url("../images/stars.png");
+    text-align: center;
+    color: white; }
+    section#splash blockquote {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 2rem;
+      font-weight: 400;
+      text-shadow: 8px 8px 14px #0c0743; }
+    section#splash cite {
+      font-size: 1rem; }
+      section#splash cite a {
+        text-decoration: none;
+        color: inherit; }
+  section#about {
+    background: url("../images/egg_shell.png");
+    text-align: center; }
+    section#about h1 {
+      margin: 0; }
+    section#about .container {
+      background: #ccc;
+      border-radius: 5px; }
+    section#about .intro {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: 300; }
+    section#about .intro-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem; }
+      section#about .intro-container .brand-container {
+        display: flex;
+        flex-direction: column; }
+        section#about .intro-container .brand-container .headshot {
+          border: 2px solid #222;
+          border-radius: 5px;
+          vertical-align: middle; }
+    section#about .social-links {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: .25rem 0 0 0;
+      padding-left: 0;
+      font-size: 1.5rem;
+      list-style: none; }
+      section#about .social-links i {
+        color: #333; }
+  section#skills {
+    color: 444; }
+    section#skills ul {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      section#skills ul li {
+        margin: .5rem 0 0 1rem;
+        font-weight: 500; }
+        section#skills ul li:first-of-type {
+          margin-left: 0; }
+  section#work .lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    section#work .lists div {
+      flex: 0 26rem; }
+  section#work ul {
+    padding-left: .5rem;
+    list-style: none; }
+    section#work ul li {
+      padding: .5rem 0; }
+      section#work ul li a {
+        color: inherit; }
+        section#work ul li a i {
+          font-size: .7rem;
+          color: blue; }
+
+footer {
+  margin-top: auto;
+  background: black;
+  padding: 2rem;
+  color: white;
+  text-align: center; }
+  footer a {
+    color: inherit;
+    text-decoration: none; }
+
+.show-med {
+  display: none; }
+
+@media (min-width: 576px) {
+  header {
+    align-items: center;
+    background: #222; }
+    header .collapse {
+      display: none; }
+    header ul {
+      height: inherit;
+      display: flex;
+      flex-direction: row;
+      margin-left: 0;
+      background: none;
+      color: inherit;
+      border: 0; }
+      header ul li {
+        margin-left: 2rem;
+        border: 0; }
+        header ul li:first-of-type {
+          margin-left: 0; }
+  main {
+    margin-top: 100px; }
+  section#splash {
+    min-height: calc(100vh - 100px); }
+    section#splash blockquote {
+      font-size: 3rem; }
+    section#splash cite {
+      font-size: 1.25rem; }
+  section#about {
+    text-align: left; }
+    section#about .intro-container {
+      flex-direction: row; }
+      section#about .intro-container p {
+        max-width: 90%; }
+      section#about .intro-container .intro {
+        order: 1; }
+      section#about .intro-container .brand-container {
+        order: 2; }
+  section#work ul {
+    padding-left: 1.5rem; } }
+
+@media (min-width: 768px) {
+  header {
+    padding: 0 1.5rem;
+    flex-direction: row; }
+    header .name {
+      margin: 0.85em 0; }
+  .hide-med {
+    display: none; }
+  .show-med {
+    display: inherit; }
+  main {
+    margin-top: 80px; }
+  section#splash {
+    min-height: calc(100vh - 80px); }
+    section#splash blockquote {
+      font-size: 3.5rem; } }
+
+@media (min-width: 1200px) {
+  section {
+    padding: 1rem 0; }
+    section#skills {
+      padding-bottom: 0; } }
+
+/*# sourceMappingURL=style.css.map */

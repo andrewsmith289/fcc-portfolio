@@ -1,0 +1,136 @@
+// Extra Small
+@media (min-width: 375px) {
+  
+}
+
+// Small
+@media (min-width: 576px) {
+
+  header {
+    align-items: center;
+    background: #222;
+
+    .collapse {
+      display: none;
+    }
+
+    ul {
+      height: inherit;
+      display: flex;
+      flex-direction: row;
+      margin-left: 0;
+      background: none;
+      color: inherit;
+      border: 0;
+
+      li {
+        margin-left: 2rem;
+        border: 0;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  main {
+    margin-top: 100px;
+  }
+
+  section {
+
+    &#splash {
+      min-height: calc(100vh - 100px);
+
+      blockquote {
+        font-size: 3rem;
+      }
+
+      cite {
+        font-size: 1.25rem;
+      }
+    }
+
+    &#about {
+      text-align: left;
+
+      .intro-container {
+
+        flex-direction: row;
+
+        p {
+          max-width: 90%;
+        }
+
+        .intro {
+          order: 1;
+        }
+
+        .brand-container {
+          order: 2;
+        }
+      }      
+    }
+    &#work {
+      ul {
+        padding-left: 1.5rem;
+      }
+    }
+  }
+}
+
+// Medium
+@media (min-width: 768px) {
+  
+  header {
+    padding: 0 1.5rem;
+    flex-direction: row;
+
+    .name {
+      margin: 0.85em 0;
+    }
+  }
+
+  .hide-med {
+    display: none;
+  }
+
+  .show-med {
+    display: inherit;
+  }
+
+  main {
+    margin-top: 80px;
+  }
+
+  section {
+    &#splash {
+      min-height: calc(100vh - 80px);
+
+      blockquote {
+        font-size: 3.5rem;
+      }
+    }   
+  }
+}
+
+// Large
+@media (min-width: 992px) {
+}
+
+// Extra Large
+@media (min-width: 1200px) {
+
+  section {    
+    padding: 1rem 0;
+
+    &#splash {
+      // margin-bottom: 1rem;
+    }
+    
+    &#skills {
+      padding-bottom: 0;
+    }
+  }
+}

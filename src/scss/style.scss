@@ -16,6 +16,14 @@ body {
   margin: 0;
 }
 
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -26,6 +34,7 @@ header {
   left: 0;
   font-weight: bold;
   color: #ddd;
+  z-index: 10;
 
   .name {
     margin: 0;
@@ -57,8 +66,7 @@ header {
     color: #ddd;
     font-weight: 400;
     border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    
+    border-bottom: 2px solid black;    
 
     li {
       text-align: center;
@@ -80,14 +88,19 @@ header {
   }
 }
 
+blockquote {
+  width: 100%;
+}
+
 main {
   margin-top: 38px;
+  margin-bottom: 1rem;
 }
 
 section {
-
-  padding: 0;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 
   h1, h2, h3 {
     font-weight: 500;
@@ -97,24 +110,32 @@ section {
     background: #333;
     color: white;
     padding: .25rem .5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 1200px;    
+    margin: 0;
   }
+
   h2 {
+    padding: .25rem;
+    margin: 0;
+    background: #777;
+    color: #fff;
     font-size: 1.1rem;
+    border-radius: 5px 5px 0 0;
   }
 
   .container {
     max-width: 1200px;
-    padding: 0 .5rem;
-    margin: 0 auto;
+    padding: 1rem;
   }
 
-  &.splash {
-    min-height: calc(100vh - 38px);
-    max-width: inherit;
+  &#splash {
+    min-height: calc(100vh - 39px);
+    position: relative;
+    z-index: -5;
+    padding: 0 2rem;
     padding-top: 7rem;
+
     background: bottom / cover url("../images/stars.png");
     text-align: center;
     color: white;
@@ -142,7 +163,7 @@ section {
     text-align: center;
 
     h1 {
-      margin-bottom: 0;
+      margin: 0;
     }
 
     .container  {
@@ -151,8 +172,7 @@ section {
     }
 
     .intro {
-      margin-top: 0;
-      
+      margin-top: 0;      
       font-size: 1.2rem;
       font-weight: 300;
     }
@@ -162,10 +182,7 @@ section {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
-
-      p {
-      }
+      padding: 2rem; 
 
       .brand-container {
         display: flex;
@@ -183,8 +200,7 @@ section {
       display: flex;
       justify-content: space-around;
       width: 100%;
-      margin: 0;
-      margin-top: .25rem;
+      margin: .25rem 0 0 0;
       padding-left: 0;
       font-size: 1.5rem;
       list-style: none;
@@ -195,14 +211,38 @@ section {
     }    
   }
 
+  &#skills {
+    color: 444; 
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      li {
+        margin: .5rem 0 0 1rem;
+        font-weight: 500;  
+        
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
   &#work {
+    
     .lists {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
 
       div {
-        flex: 0 30rem;
+        flex: 0 26rem;
       }
     }
 
@@ -211,11 +251,11 @@ section {
       list-style: none;      
 
       li {
-        padding: .25rem 0;
+        padding: .5rem 0;
 
         a {
           color: inherit;
-          text-decoration: none;
+          // text-decoration: none;
 
           i {
             font-size: .7rem;
@@ -244,145 +284,4 @@ footer {
   display: none;
 }
 
-// Extra Small
-@media (min-width: 375px) {
-  section {
-    &.splash {
-      blockquote {
-      }
-
-      cite {
-      }
-    }
-  }
-}
-
-// Small
-@media (min-width: 576px) {
-  header {
-    align-items: center;
-    background: #222;
-
-    .collapse {
-      display: none;
-    }
-
-    ul {
-      height: inherit;
-      display: flex;
-      flex-direction: row;
-      margin-left: 0;
-      background: none;
-      color: inherit;
-      border: 0;
-
-      li {
-        margin-left: 2rem;
-        border: 0;
-
-        &:first-of-type {
-          margin-left: 0;
-        }
-      }
-    }
-  }
-
-  main {
-    margin-top: 74px;
-  }
-
-  section {
-    &.splash {
-      blockquote {
-        font-size: 3rem;
-      }
-
-      cite {
-        font-size: 1.25rem;
-      }
-    }
-
-    &#about {
-      text-align: left;
-
-      .intro-container {
-
-        flex-direction: row;
-
-        p {
-          max-width: 90%;
-
-        }
-
-        .intro {
-          order: 1;
-        }
-
-        .brand-container {
-          order: 2;
-        }
-      }
-      .social-links {
-      
-      }
-    }
-    &#work {
-      ul {
-        padding-left: 1.5rem;
-        list-style: none;
-      }
-    }
-  }
-}
-
-// Medium
-@media (min-width: 768px) {
-  header {
-    padding: 0 1.5rem;
-    flex-direction: row;
-
-    .name {
-      margin: 0.85em 0;
-    }
-  }
-
-  .hide-med {
-    display: none;
-  }
-
-  .show-med {
-    display: inherit;
-  }
-
-  section {
-    &.splash {
-      blockquote {
-        font-size: 3.5rem;
-      }
-
-      cite {
-      }
-    }
-
-    &#about {
-      .intro-container {
-
-        p {
-        }
-      }
-      .social-links {
-      }
-    }
-  }
-}
-
-// Large
-@media (min-width: 992px) {
-}
-
-// Extra Large
-@media (min-width: 1200px) {
-  section {    
-    padding: 2rem 0;
-  }
-}
+@import '_queries.scss';
